@@ -1,0 +1,164 @@
+@import '../../Styles/var.scss';
+
+.navbar {
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 !important;
+    .row {
+        height: 100px;
+        .col-lg-12 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .navbar__brand {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 150px;
+                }
+            }
+            i{
+                position: absolute;
+                right: 50px;
+                font-size: 30px;
+                color: $main-color;
+                display: none;
+            }
+
+            .navbar__list {
+                height: 100px;
+                display: flex;
+                align-items: center;
+                margin: 0;
+                .navbar__item {
+                    position: relative;
+                    margin-right: 25px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    >a {
+                        position: relative;
+                        font-size: 22px;
+                        font-weight: 500;
+                        color: white;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 0;
+                            transition: 0.4s;
+                            height: 3px;
+                            border-radius: 2px;
+                            background-color: $dark-blue;
+                            top: 0;
+                            left: 50%;
+                        }
+
+                        &:hover {
+                            &::after {
+                                left: 0;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    >ul {
+                        position: absolute;
+                        display: none;
+                        flex-direction: column;
+                        top: 100%;
+                        left: 0;
+                        padding: 10px;
+                        padding-left: 20px;
+                        width: 100%;
+                        background-color: white;
+                        text-align: left;
+
+
+                        li {
+                            line-height: 30px;
+                            font-size: 25px;
+                        }
+                    }
+
+                    &:hover {
+                        &:hover {
+                            ul {
+                                display: flex;
+                                top: 100%;
+                            }
+                        }
+
+                        ul {
+                            display: flex;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width:1440px) {
+    .navbar {
+        display: flex;
+        justify-content: center !important;
+        .col-xl-10 {
+            height: 100px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .navbar {
+        padding-left: 50px !important;
+    }
+}
+@media (max-width:767px) {
+    
+    .navbar{
+        i{
+            display: flex !important;
+        }
+        .navbar__list{
+            display: flex !important;
+            flex-direction: column;
+            top: 0;
+            bottom: 0; 
+            right: 0;
+            left: 120%;
+            width: 0;
+            min-height: 100vh !important;
+            position: absolute;
+            z-index: 2;
+            background-color: darkcyan;
+            transition: .3s;
+        }
+    }
+    .showNav{
+        i{
+            z-index: 10;
+            cursor: pointer;
+        }   
+        .navbar__list{
+           width:100% !important;
+           left: 0;
+           justify-content: flex-start !important;
+           .navbar__item{
+               ul{
+                   left:100% !important;
+                   top: 40% !important;
+               }
+           }
+        }
+    }
+    
+}

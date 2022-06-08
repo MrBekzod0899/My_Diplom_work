@@ -1,0 +1,230 @@
+@import '../../Styles/var.scss';
+
+.content {
+    width: 100%;
+    background: white;
+    height: auto;
+
+    .infoService {
+        position: relative;
+        height: 400px;
+        margin-bottom: 20px;
+
+        >.row {
+            width: 100%;
+            top: -50px;
+            left: 0;
+            justify-content: center;
+            position: absolute;
+
+            .col-lg-3 {
+                background-color: #006394;
+                flex-direction: column;
+                text-align: center;
+                align-items: start;
+                color: $main-color;
+                padding: 30px 10px;
+                border: 1px solid white;
+
+                .content-header {
+                    font-size: 18px;
+                    font-weight: 500;
+
+                    i {
+                        font-size: 50px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &:nth-child(1) {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    b {
+                        margin-right: 10px;
+                    }
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        width: 80%;
+                        text-align: center;
+                    }
+                }
+
+            }
+
+            .content-footer {
+                width: 100%;
+                @include center();
+
+                h2 {
+                    color: $light-blue;
+                    margin-top: 20px;
+                    font-size: 40px;
+                    font-weight: 500px;
+                    letter-spacing: 1px;
+                }
+            }
+
+        }
+    }
+
+    >.row {
+        position: relative;
+        width: 100% !important;
+        padding-top: 30px;
+        .col-lg-6 {
+            margin: 0;
+            padding: 0;
+            border: 1px solid $main-color;
+            margin-bottom: 20px;
+
+            .card {
+                width: 100%;
+                height: 100%;
+
+                .card-footer {
+                    background: #f6f7f8;
+                    @include center;
+                    flex-direction: column;
+
+                    h4 {
+                        color: $light-blue;
+                        font-size: 32px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+
+                .video-content {
+                    height: 450px !important;
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+    .locations{
+        padding: 30px 0 !important;
+        .row{
+            .col-lg-3{
+                margin-top: 20px;
+                display: flex;
+                align-items: flex-start;
+                .locationInfo{
+                    display: flex;
+                    flex-direction: column;
+                    @include center;
+       
+                    i{
+                        font-size: 40px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    h4{
+                        margin: 25px 0;
+                        font-weight: 400;
+                    }    
+         
+                    p{
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .order{
+        width:100%;
+        background: url(../../Assets/bg3.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 600px;
+        @include center;
+        text-align: center;
+        &-content{
+            flex-direction: column;
+            width: 35%;
+            display: flex;
+            color: $main-color;
+            p{
+                font-size: 64px;
+                font-weight: 900;
+            }
+            span{
+                font-size: 24px;
+                font-weight: 500;
+            }
+            button{
+                margin-top: 20px;
+                background-color: $orange;
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-size: 18px;
+                color: $main-color !important; 
+                display: inline-block;
+                &:focus{
+                    outline: unset;
+                }
+            }
+        }
+    }
+    .ourService{
+        .row{
+            margin-top: 50px;
+            width: 100%;
+            .serviceInfo{
+                border-bottom: 2px solid #EEEEEE;
+                box-sizing: border-box;
+                display: block;
+                position: relative;
+                margin-bottom:100px;
+                h4{
+                    color: #1E6494;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    height: 2px;
+                    background-color: #95C841;
+                    width: 30%;
+                }
+            }
+            .col-lg-3{
+                .card{
+                    border: none;
+                    @include center;
+                    background-color: #EEF0F1;
+                    padding: 30px 30px;
+                    height: 350px;
+                    width: 100%;
+                    position: relative;
+                    text-align: center;
+                    .card-content{
+                        position: absolute;
+                        top: -80px;
+                        border: 1px solid #95C841;
+                        border-radius: 50%;   
+                    }
+                    h4{
+                        margin-top: 100px;
+                        color: #1E6494;
+                        font-weight: 600;
+                    }
+                    p{
+                        color:#6F6B78;
+                    }
+                }
+            }
+        }
+    }
+}
