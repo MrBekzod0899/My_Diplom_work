@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row company_info">
     <div class="col-xl">
         <div class="card">
             <div class="card-body">
@@ -8,31 +8,30 @@
                         Add {{{title}}}
                     </button>
                 </div>
-                <table class="table table-striped category-table">
+                <table class="table table-striped company_info-table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th class="text-center" scope="col">#</th>
                             <th scope="col">Title</th>
+                            <th scope="col">subject</th>
                             <th scope="col">status</th>
-                            <th scope="col">order</th>
-                            <th scope="col">Action</th>
+                            <th class="text-center" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each categories}}
-                        <tr>
-                            <th scope="row">{{@index}}</th>
+                        {{#each company_info}}
+                        <tr >
+                            <th class="text-center" scope="row">{{@index}}</th>
                             <td>
-                                <img src='/{{Image}}' width="80" height="80"/>
                                 <span>{{title}}</span>
                             </td>
+                            <td>{{subject.name}}</td>
                             <td style="cursor: pointer;">
-                                <a href="/category/status/{{_id}}" >{{{status}}}</a>
+                                <a href="/company_info/status/{{_id}}" >{{{status}}}</a>
                             </td>                            
-                            <td>{{order}}</td>
                             <td>
-                                <a class="btn btn-warning" href="/category/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="/category/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
+                                <a class="btn btn-warning" href="/company_info/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" href="/company_info/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
                             </td>
                         </tr>
                         {{/each}}
@@ -54,17 +53,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/category?_csrf={{csrf}}" enctype="multipart/form-data" method="post">
+                <form action="/company_info?_csrf={{csrf}}"  method="post">
                 <input type="hidden" name="_csrf" value="{{csrf}}" />
                     <div class="form-group">
                         <input type="text" name="title" class="form-control" 
                             placeholder="Enter Category title" />
                     </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control"  name="order" placeholder="Tartib raqami" />
-                    </div>
-                    <div class="form-group">
-                        <input type="file" class="form-control"  name="Image" placeholder="Photo of category" />
+                     <div class="form-group">
+                        <label for="inputState">Subject</label>
+                        <select name="subject" id="inputState" class="form-control custom-select">
+                                <option class="p-2 m-2" selected disabled>Choose Subject...</option>
+                            {{#each subjects}}
+                                <option value="{{_id}}" class="p-2 m-2" >{{name}}</option>
+                            {{/each}}
+                        </select>
                     </div>
                     <div class="custom-control custom-checkbox form-group">
                         <input type="checkbox" class="custom-control-input" id="Status" value="1" name="status"
@@ -93,7 +95,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/category/save?_csrf={{csrf}}" name="editForm" enctype="multipart/form-data" method="post">
+                <form action="/company_info/save?_csrf={{csrf}}" name="editForm"  method="post">
                     <div class="form-group">
                         <input type="hidden"  name="_id" value="" />
                         <input type="hidden"  name="_csrf" value="{{csrf}}" />
@@ -101,17 +103,20 @@
                             placeholder="Enter Category title" />
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control"  name="order" placeholder="Tartib raqami" />
+                        <label for="inputState">Subject</label>
+                        <select name="subject" id="inputState" class="form-control custom-select">
+                                <option class="p-2 m-2" selected disabled>Choose Subject...</option>
+                            {{#each subjects}}
+                                <option value="{{_id}}" class="p-2 m-2" >{{name}}</option>
+                            {{/each}}
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <input type="file" class="form-control"  name="Image" placeholder="Photo of category" />
-                    </div>
+    
                     <div class="custom-control custom-checkbox form-group">
                         <input type="checkbox" class="custom-control-input" id="stCat" value="1" name="status"
                             checked />
                         <label class="custom-control-label" for="stCat">status</label>
                     </div>
-                    <img id="image" name="Image" width="100"/>
                     <div class="modal-footer pr-0">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bekor qilish</button>
                         <button type="submit" class="btn btn-primary">Saqlash</button>
@@ -128,16 +133,13 @@
     console.log(image)
     function edit(id){
         console.log(id)
-        fetch(`http://localhost:3003/category/get/${id}`)
+        fetch(`http://localhost:8080/company_info/get/${id}`)
         .then(res=>res.json())
         .then(data=>{
             editform._id.value=data._id
             editform.title.value=data.title
-            editform.order.value=data.order
-            editform.status.checked=data.status==1 ? true : false
-            if(data.Image){
-                image.setAttribute('src',`/${data.Image}`)
-            }
+            editform.subject.value=data.subject
+            editform.status.checked=data.status ? true : false
         })
     }       
 </script>

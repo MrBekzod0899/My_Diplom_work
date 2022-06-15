@@ -51,10 +51,10 @@ let routerList=require('./router')
 
 app.use(routerList)
 
-const PORT=8080
-async function dev(){
+const PORT=5000
+function  dev (){
   try{
-    await mongoose.connect(mongoURL,{
+      mongoose.connect(mongoURL,{
       useNewUrlParser:true
     })
     app.listen(PORT,()=>{

@@ -1,14 +1,12 @@
 const {Router}=require('express')
 const router=Router()
 const Category=require('../model/category')
-const Subject=require('../model/subject')
 const upload=require('../middleware/file')
 
 router.get('/',async(req,res)=>{
-    let categories=await Category.find().populate('subject').lean()
-    let subjects=await Subject.find().lean()
+    let categories=await Category.find().lean()
     categories=categories.map(category=>{
-        category.status ?
+        category.status===1 ?
         category.status=`<span class="badge badge-pill badge-success">faol</span>`
         : category.status=`<span class="badge badge-pill badge-danger">no faol</span>`
     return category
@@ -16,15 +14,18 @@ router.get('/',async(req,res)=>{
     res.render('page/category/category',{
         isCategory:true,
         title:'Category',
-        categories,
-        subjects
+        categories
     })
 })
 
-router.post('/',async(req,res)=>{
-    let {title,subject,status}=req.body
+router.post('/',upload.single('Image'),async(req,res)=>{
+    let {title,order,status}=req.body
     status=status || 0
-    let newCategory=await new Category({title,subject,status}).populate('subject')
+    let Image='no photo'
+    if(req.file){
+        Image=req.file.path
+    }
+    let newCategory=await new Category({title,order,status,Image})
     await newCategory.save()
     res.redirect('/category')
 })
@@ -52,10 +53,14 @@ router.get('/get/:id',async(req,res)=>{
     res.send(editCategory)
 })
 
-router.post('/save',async(req,res)=>{
-    let {_id,title,subject,status}=req.body
+router.post('/save',upload.single('Image'),async(req,res)=>{
+    let {_id,title,order,status}=req.body
     status=status || 0
-    let editCategory=await Category.findByIdAndUpdate(_id,{title,subject,status})
+    let Image;
+    if(req.file){
+        Image=req.file.path
+    }
+    let editCategory=await Category.findByIdAndUpdate(_id,{title,order,status,Image})
     await editCategory.save()
     res.redirect('/category')
 })

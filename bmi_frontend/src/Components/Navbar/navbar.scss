@@ -2,10 +2,13 @@
 
 .navbar {
     z-index: 3;
-    background: rgba(0, 0, 0, 0.5);
+    background: #fcb131;
     padding: 0 !important;
+    margin-top: 50px;
+    width: 100%;
+    height: 80px;
     .row {
-        height: 100px;
+        height: 100%;
         .col-lg-12 {
             width: 100%;
             display: flex;
@@ -14,7 +17,6 @@
                 height: 100%;
                 display: flex;
                 align-items: center;
-
                 img {
                     width: 150px;
                 }
@@ -26,9 +28,8 @@
                 color: $main-color;
                 display: none;
             }
-
             .navbar__list {
-                height: 100px;
+                height: 80px;
                 display: flex;
                 align-items: center;
                 margin: 0;
@@ -41,9 +42,8 @@
                     >a {
                         position: relative;
                         font-size: 22px;
-                        font-weight: 500;
-                        color: white;
-
+                        color: black;
+                        font-weight: bold;
                         &::after {
                             content: '';
                             position: absolute;
@@ -51,11 +51,10 @@
                             transition: 0.4s;
                             height: 3px;
                             border-radius: 2px;
-                            background-color: $dark-blue;
-                            top: 0;
+                            background-color: white;
+                            bottom: -3px;
                             left: 50%;
                         }
-
                         &:hover {
                             &::after {
                                 left: 0;
@@ -63,7 +62,6 @@
                             }
                         }
                     }
-
                     >ul {
                         position: absolute;
                         display: none;
@@ -108,14 +106,21 @@
     .navbar {
         display: flex;
         justify-content: center !important;
+        padding: 0 20px;
         .col-xl-10 {
-            height: 100px;
+            height: 80px;
             align-items: center;
             display: flex;
             justify-content: space-between;
         }
     }
 }
+@media (max-width:1440px) {
+    .navbar {
+        padding: 0 20px !important;
+    }
+}
+
 
 @media (max-width:1024px) {
     .navbar {

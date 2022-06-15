@@ -1,97 +1,8 @@
 import React from "react";
 import "./content.scss";
-
-import ReactPlayer from "react-player";
 const Content = () => {
   return (
     <div className="content">
-      <div className="infoService">
-        <div className="row">
-          <div className="col-lg-3">
-            <div className="content-header">
-              <i class="fa-solid fa-clock"></i>
-              <p>Hours of Operation</p>
-              <ul>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-                <li>
-                  <b>Monday</b>
-                  <span>9:00am-7:30pm</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <div className="content-header">
-              <i class="fa-solid fa-calendar"></i>
-              <p>Appointments</p>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              impedit?
-            </p>
-            <h4>book now</h4>
-          </div>
-          <div className="col-lg-3">
-            <div className="content-header">
-              <i class="fa-solid fa-server"></i>
-              <p>Services</p>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              impedit? Lorem, ipsum dolor.
-            </p>
-            <h4>book now</h4>
-          </div>
-          <div className="content-footer">
-            <h2>Real Stories for Real Patients</h2>
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-          <div className="card">
-            <ReactPlayer
-              className="video-content"
-              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-            />
-            <div className="card-footer">
-              <h4>Bekzod Kurbonov</h4>
-              <p>Athlete</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-          <div className="card">
-            <ReactPlayer
-              className="video-content"
-              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-            />
-            <div className="card-footer">
-              <h4>Bekzod Kurbonov</h4>
-              <p>Athlete</p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="container locations">
         <div className="row">
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
@@ -141,12 +52,70 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="order">
-        <div className="order-content">
-          <p>Book Your Appointment Today!</p>
-          <span>Call us to make appointment or book online</span>
-          <div>
-            <button className="btn ">Book Order</button>
+      <div className="container home-product">
+        <h1>Our Products</h1>
+        <div className="row ">
+          <div className="col-lg-4  col-md-6 col-sm-6 col-12">
+            <div className="card">
+              <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div className="card">
+            <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
+               
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div className="card">
+            <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
+               
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div className="card">
+              <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />         
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+              </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div className="card">
+            <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />           
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div className="card">
+            <div className="card-body">
+                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />      
+              </div>
+              <div className="card-footer">
+                  <a href="#!">text</a>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -160,29 +129,29 @@ const Content = () => {
               <div className="card-content">
                 <img src={require("../../Assets/icon1.png")} alt="icon1" />
               </div>
-              <h4>Physiotherapy</h4>
+              <h4>Deliver</h4>
               <p>
                 Lorem ipsum dolor Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Repellendus qui iusto similique alias
                 inventore eaque tempora incidunt eum. Illo non aliquam est amet
-                reprehenderit laboriosam repellendus earum 
+                reprehenderit laboriosam repellendus earum
               </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
             <div className="card">
               <div className="card-content">
-                <img src={require("../../Assets/icon2.png")} alt="icon2" /> 
+                <img src={require("../../Assets/icon2.png")} alt="icon2" />
               </div>
-               <div className="card-info">
-                  <h4>Chiropractic</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Dolorem fuga similique
-                    veritatis consectetur quam molestias! consectetur
-                    adipisicing elit. Harum, est.
-                  </p>
-                </div>
+              <div className="card-info">
+                <h4>Cheap and comfortable service</h4>
+                <p>
+                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Dolorem fuga similique veritatis
+                  consectetur quam molestias! consectetur adipisicing elit.
+                  Harum, est.
+                </p>
+              </div>
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
@@ -191,7 +160,7 @@ const Content = () => {
                 <img src={require("../../Assets/icon3.png")} alt="icon3" />
               </div>
               <div className="card-info">
-                <h4>Naturopathy</h4>
+                <h4>High Quality Equipment</h4>
                 <p>
                   Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur
                   adipisicing elit. In temporibus expedita vitae doloremque
@@ -207,11 +176,12 @@ const Content = () => {
                 <img src={require("../../Assets/icon4.png")} alt="icon4" />
               </div>
               <div className="card-info">
-                <h4>Additional Services</h4>
+                <h4>Master</h4>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Harum, est. Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Iste, tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel.
+                  elit. Iste, tenetur. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Vel.
                 </p>
               </div>
             </div>

@@ -10,7 +10,7 @@ const storage=multer.diskStorage({
     }
 })
 
-const arrTypes=['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+const arrTypes=['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','image/jpeg','video/mp4','audio/mpeg','image/png','image/svg+xml']
 
 const fileFilter=(req,file,cb)=>{
     if(arrTypes.includes(file.mimetype)){

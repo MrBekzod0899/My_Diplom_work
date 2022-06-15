@@ -1,15 +1,16 @@
 const {Schema,model}=require('mongoose')
 
 const category=new Schema({
-    title:String,
-    subject:{
-        type:Schema.Types.ObjectId,
-        ref:"Subject"
-    },
-    status:{
-        type:Boolean,
-        default:true
-    },
+        title:String,
+        Image:String,
+        order:{
+            type:Number,
+            default:0
+        },
+        status:{
+            type:Number,
+            default:0
+        }, 
 })
 
 module.exports=model('Category',category)

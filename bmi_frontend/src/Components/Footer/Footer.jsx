@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './footer.scss'
-import logo from '../../Assets/logo3.png'
 const Footer = () => {
   return (
     <div className="footer">
@@ -10,8 +9,9 @@ const Footer = () => {
             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
             <Link to="/" className="navbar__brand">
                 <img
-                src={logo}
+                src='https://i.pinimg.com/originals/bf/94/9d/bf949dba3df5479c96964b86a1ebff63.png'
                 alt="logo"
+            
                 />
             </Link>
             <ul>

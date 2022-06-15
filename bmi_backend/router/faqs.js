@@ -3,9 +3,9 @@ const { Router } = require("express");
 const router=Router()
 
 router.get('/',async(req,res)=>{
-    res.render('index',{
-        title:'Company Title',
-        isHome:true
+    res.render('page/faqs/faqs',{
+        title:'Question_Answer',
+        isFaqs:true
     })
 })
 

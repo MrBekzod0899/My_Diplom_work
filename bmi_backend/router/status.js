@@ -1,7 +1,6 @@
 const {Router}=require('express')
 const router=Router()
-const Moderator=require('../model/moderator')
-const Teacher=require('../model/teacher')
+
 
 router.get('/',async(req,res)=>{
     let teachers= await Teacher.find().lean()

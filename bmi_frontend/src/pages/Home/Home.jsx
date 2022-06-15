@@ -1,7 +1,8 @@
 import React from 'react';
 import Content from '../../Components/Content/Content';
+import Slider from '../../Components/Slider';
 import './home.scss'
-import Slider from './Slider/Slider';
+
 const Home = () => {
     return (
       <div className='home container-fluid'>
@@ -10,9 +11,7 @@ const Home = () => {
                 <Slider/>
             </div>
           </div>
-
         <Content/>
-       
       </div>
     );
 }

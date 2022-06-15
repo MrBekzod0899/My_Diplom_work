@@ -25,11 +25,8 @@ const Slider = () => {
               <h1>Care To Feel Better </h1>
             </div>
             <div className="slider-info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              esse optio tempore totam vitae autem repudiandae quasi doloribus
-              minus recusandae.
+              Lorem ipsum dolor sit
             </div>
-            <button className="btn text-light">book online</button>
           </div>
       </SplideSlide>
       <SplideSlide >
@@ -40,11 +37,8 @@ const Slider = () => {
             <h1>Care To Feel Better </h1>
           </div>
           <div className="slider-info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            esse optio tempore totam vitae autem repudiandae quasi doloribus
-            minus recusandae.
-          </div>
-          <button className="btn text-light">book online</button>
+              Lorem ipsum dolor sit
+            </div>
         </div>
       </SplideSlide>
       <SplideSlide >
@@ -55,11 +49,8 @@ const Slider = () => {
             <h1>Care To Feel Better </h1>
           </div>
           <div className="slider-info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            esse optio tempore totam vitae autem repudiandae quasi doloribus
-            minus recusandae.
-          </div>
-          <button className="btn text-light">book online</button>
+              Lorem ipsum dolor sit <i className="fa-solid fa-arrow-right-to-arc"></i>
+            </div>
         </div>
       </SplideSlide>
     </Splide>

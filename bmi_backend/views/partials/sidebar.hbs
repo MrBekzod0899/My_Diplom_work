@@ -16,27 +16,47 @@
             class="material-icons-outlined"
           >dashboard</i>Bosh sahifa</a>
       </li>
-      <li {{#if isSubject}} class="active-page" {{/if}} >
-        <a href="/subject" {{#if isSubject}} class="active" {{/if}} ><i
+      <li {{#if isCompany_Info}} class="active-page" {{/if}} >
+        <a href="/company_info" {{#if isCompany_Info}} class="active" {{/if}} ><i
             class="material-icons-outlined"
-          >slideshow</i>Subjects</a>
+          >slideshow</i>Company Info</a>
       </li>
-      <li {{#if isCategory}} class="active-page" {{/if}} >
+      <li {{#if isStuff}} class="active-page" {{/if}} >
+        <a href="/stuff" {{#if isStuff}} class="active" {{/if}} ><i
+            class="material-icons-outlined"
+          >dashboard</i>Stuff</a>
+      </li>
+      <li {{#if isProduct}}   class="active-page" {{/if}} >
+        <a href="/product" {{#if isProduct}} class="active" {{/if}} ><i
+            class="material-icons-outlined"
+          >grid_view</i>Product</a>
+      </li>
+      <li {{#if isTechnology}}   class="active-page" {{/if}} >
+        <a href="/technology" {{#if isTechnology}} class="active" {{/if}} ><i
+            class="material-icons-outlined"
+          >grid_view</i>Technology</a>
+      </li>
+      <li {{#if isCategory}}   class="active-page" {{/if}} >
         <a href="/category" {{#if isCategory}} class="active" {{/if}} ><i
             class="material-icons-outlined"
-          >dashboard</i>Category</a>
+          >grid_view</i>Category</a>
       </li>
-      <li {{#if isTeacher}}   class="active-page" {{/if}} >
-        <a href="/teacher" {{#if isTeacher}} class="active" {{/if}} ><i
+      <li {{#if isAttribute}}   class="active-page" {{/if}} >
+        <a href="/attribute" {{#if isAttribute}} class="active" {{/if}} ><i
             class="material-icons-outlined"
-          >grid_view</i>Teacher</a>
+          >grid_view</i>Attribute</a>
       </li>
-      <li {{#if isProject}} class="active-page" {{/if}}>
-        <a href="/moderator" {{#if isProdcut}} class="active" {{/if}}>
-        <i class="material-icons-outlined">shopping_basket</i>Moderator</a>
+      <li {{#if isSlider}}   class="active-page" {{/if}} >
+        <a href="/slider" {{#if isSlider}} class="active" {{/if}} ><i
+            class="material-icons-outlined"
+          >grid_view</i>slider</a>
       </li>
-      <li {{#if isStatus}} class="active-page" {{/if}}>
-        <a {{#if isStatus}} class="active" {{/if}} href="/status"><i class="material-icons">settings</i>Status</a>
+      <li {{#if isVakansiya}} class="active-page" {{/if}}>
+        <a href="/vakansiya" {{#if isVakansiya}} class="active" {{/if}}>
+        <i class="material-icons-outlined">shopping_basket</i>vakansiya</a>
+      </li>
+      <li {{#if isFaqs}} class="active-page" {{/if}}>
+        <a {{#if isFaqs}} class="active" {{/if}} href="/faqs"><i class="material-icons">settings</i>faqs</a>
       </li>    
     </ul>
   </div>

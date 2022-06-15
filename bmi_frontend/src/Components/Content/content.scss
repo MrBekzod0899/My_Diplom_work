@@ -4,92 +4,17 @@
     width: 100%;
     background: white;
     height: auto;
-
-    .infoService {
-        position: relative;
-        height: 400px;
-        margin-bottom: 20px;
-
-        >.row {
-            width: 100%;
-            top: -50px;
-            left: 0;
-            justify-content: center;
-            position: absolute;
-
-            .col-lg-3 {
-                background-color: #006394;
-                flex-direction: column;
-                text-align: center;
-                align-items: start;
-                color: $main-color;
-                padding: 30px 10px;
-                border: 1px solid white;
-
-                .content-header {
-                    font-size: 18px;
-                    font-weight: 500;
-
-                    i {
-                        font-size: 50px;
-                        margin-bottom: 10px;
-                    }
-                }
-
-                &:nth-child(1) {
-                    ul {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    b {
-                        margin-right: 10px;
-                    }
-                }
-
-                &:nth-child(2),
-                &:nth-child(3) {
-                    display: flex;
-                    align-items: center;
-
-                    p {
-                        width: 80%;
-                        text-align: center;
-                    }
-                }
-
-            }
-
-            .content-footer {
-                width: 100%;
-                @include center();
-
-                h2 {
-                    color: $light-blue;
-                    margin-top: 20px;
-                    font-size: 40px;
-                    font-weight: 500px;
-                    letter-spacing: 1px;
-                }
-            }
-
-        }
-    }
-
     >.row {
         position: relative;
         width: 100% !important;
-        padding-top: 30px;
         .col-lg-6 {
             margin: 0;
             padding: 0;
             border: 1px solid $main-color;
             margin-bottom: 20px;
-
             .card {
                 width: 100%;
                 height: 100%;
-
                 .card-footer {
                     background: #f6f7f8;
                     @include center;
@@ -224,6 +149,32 @@
                         color:#6F6B78;
                     }
                 }
+            }
+        }
+    }
+    .home-product{
+        >h1{
+            color: #FCB131;
+            padding: 20px 10px;
+        }
+        .row{
+            .col-lg-4{
+                .card{
+                    border-radius: 10px;
+                    border: unset;
+                    .card-body{
+                        margin: 0;
+                        padding: 0;
+                        img{
+                            border-top-right-radius: 10px;
+                            border-top-left-radius: 10px;
+                        }
+                    }
+                    .card-footer{
+                        background: #E5E9ED;
+                    }
+                }
+                margin-bottom: 20px;
             }
         }
     }
