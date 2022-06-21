@@ -12,26 +12,36 @@
                     <thead>
                         <tr>
                             <th class="text-center" scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">subject</th>
+                            <th scope="col">name</th>
+                            <th scope="col">avatar</th>
+                            <th scope="col">phone</th>
+                            <th scope="col">gmail</th>
+                            <th scope="col">age</th>
+                            <th scope="col">ocupation</th>
+                            <th scope="col">resume</th>
                             <th scope="col">status</th>
                             <th class="text-center" scope="col">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {{#each categories}}
+                    <tbody class="stuffs">
+                        {{#each stuffs}}
                         <tr >
                             <th class="text-center" scope="row">{{@index}}</th>
                             <td>
-                                <span>{{title}}</span>
+                                <span>{{name}}</span>
                             </td>
-                            <td>{{subject.name}}</td>
+                            <td><img src='http://localhost:5000/{{avatar}}'/></td>
+                            <td>{{phone}}</td>
+                            <td>{{gmail}}</td>
+                            <td>{{age}}</td>
+                            <td>{{occupation}}</td>
+                            <td><a href="http://localhost:5000/{{resume}}" target="_blank">Stuff's CV</a></td>
                             <td style="cursor: pointer;">
-                                <a href="/category/status/{{_id}}" >{{{status}}}</a>
+                                <a href="/stuff/status/{{_id}}" >{{{status}}}</a>
                             </td>                            
                             <td>
-                                <a class="btn btn-warning" href="/category/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="/category/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
+                                <a class="btn btn-warning" href="/stuff/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" href="/stuff/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
                             </td>
                         </tr>
                         {{/each}}
@@ -53,21 +63,37 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/category?_csrf={{csrf}}"  method="post">
-                <input type="hidden" name="_csrf" value="{{csrf}}" />
+                <form action="/stuff" enctype="multipart/form-data"  method="post">
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" 
-                            placeholder="Enter Category title" />
+                        <input type="text" name="name" class="form-control" 
+                            placeholder="Enter Stuff Name" />
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control" 
+                            placeholder="Enter Stuff Phone" />
+                    </div> 
                      <div class="form-group">
-                        <label for="inputState">Subject</label>
-                        <select name="subject" id="inputState" class="form-control custom-select">
-                                <option class="p-2 m-2" selected disabled>Choose Subject...</option>
-                            {{#each subjects}}
-                                <option value="{{_id}}" class="p-2 m-2" >{{name}}</option>
-                            {{/each}}
-                        </select>
+                        <input type="text" name="gmail" class="form-control" 
+                            placeholder="Enter Stuff gmail" />
+                    </div>  
+                    <div class="form-group">
+                        <input type="number" name="age" class="form-control" 
+                            placeholder="Enter Stuff Age" />
+                    </div>  
+                    <div class="form-group">
+                        <input type="text" name="occupation" class="form-control" 
+                            placeholder="Enter Stuff Occupation" />
+                    </div>  
+                    <div class="form-group">
+                        <label>Please Upload CV</label>
+                        <input type="file" name="resume" class="form-control" 
+                            placeholder="Enter Stuff CV" />
                     </div>
+                    <div class="form-group">
+                        <label>Enter User Image</label>
+                        <input type="file" name="avatar" class="form-control" 
+                            placeholder="Enter Stuff Avatar" />
+                    </div>          
                     <div class="custom-control custom-checkbox form-group">
                         <input type="checkbox" class="custom-control-input" id="Status" value="1" name="status"
                             checked />

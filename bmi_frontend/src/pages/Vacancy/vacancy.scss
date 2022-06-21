@@ -1,0 +1,190 @@
+.vacancy li ul{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.vacancy{
+    background-color: #3A3F45;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    .row{
+        padding: 10px;
+        .col-lg-8{
+            .row{
+                padding: 10px;
+            }
+        }
+    }
+}
+.vacancy-body{
+    &:hover{
+        color: rgb(234, 234, 234) !important;
+    }
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.4em;
+    color: rgb(234, 234, 234);
+    box-shadow: rgb(26 26 26 / 20%) 0px 4px 6px, rgb(26 26 26 / 10%) 0px 5px 15px;
+    background-color: rgb(64, 69, 77) !important;
+    padding: 22px;
+    margin-bottom: 13px;
+    padding: 22px;
+    font-size: 14px;
+    .left{
+        margin: 10px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        min-width: 180px;
+        img{
+            width: 100px !important;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .right{
+        .vacancy-title{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-bottom: 0;
+            span{
+                font-size: 24px;
+                margin-bottom: 0;
+                font-weight: bold;
+            }
+            span:nth-child(2){
+                font-weight: 500;
+                font-size: 16px
+            }
+        }
+        .descriptions{
+            margin-bottom: 2px;
+        }
+        .tags{
+            display: flex;
+            flex-direction: row;
+            span{
+                background-color: #53575E;
+                margin-right: 10px;
+                padding: 0px 5px;
+                border-radius: 4px;
+            }
+        }
+        padding: 0 10px;
+    }
+}
+.search-panel{
+    .card{
+        background-color: #40454D !important;
+        border: unset;
+        .card-body{
+            select{
+                background: #2C3035;
+                color: #818489;
+                border: unset;
+                margin-bottom: 20px;
+                &:active{
+                    border: unset !important;
+                }
+            }
+            .search-action{
+                display: flex;
+                justify-content: space-between;
+                button{
+                    width:50%;
+                    margin-right:10px;
+                    transform: height scale(1.2);
+                    color: #818489;
+                }
+                button:nth-child(2){
+                    margin-left: 10px;
+                    margin-right: 0;
+                    color: #2C3035 !important; 
+                }
+            }
+        }
+      
+    }
+    .jointelegram{
+        margin-top: 30px;
+        background-color: #40454D;
+        border-radius: 10px;
+        display: flex;
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+        svg{
+            width: 100px !important;
+            height: 100px;
+        }
+        a{
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            color: #818489;
+            font-weight: 600;
+            font-size: 22px;
+            &:hover{
+                color: whitesmoke;
+            }
+        }
+    }
+}
+.vacancyview{
+    display: flex;
+    flex-direction: column !important;
+}
+.vacancyview  ul{
+    display: flex !important;
+    flex-direction: column !important;
+}
+.vacancyview  ul li{
+    margin-left: 5px !important;
+    margin-bottom: 0;
+    list-style: circle;
+}
+.vacancy {
+    .job-title{
+        color: white !important;
+        font-weight: bold;
+    }
+    .similarjob{
+        padding: 0;
+        li{
+            margin-left: 10px !important;
+            padding: 5px !important;
+            width: 100%;
+            &:hover{
+                background: #2C3035;
+            }
+            a{
+                color: #888B8F !important;
+            }
+        }
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}
+.vacancyview .applybtn{
+    background: #ABB2BA !important;
+}
+
+
+
+
+
+@media (max-width:964px) {
+    .search-panel{
+        display: none;
+    }
+}

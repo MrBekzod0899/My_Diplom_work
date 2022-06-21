@@ -10,15 +10,14 @@ const Footer = () => {
             <Link to="/" className="navbar__brand">
                 <img
                 src='https://i.pinimg.com/originals/bf/94/9d/bf949dba3df5479c96964b86a1ebff63.png'
-                alt="logo"
-            
+                alt="logo" 
                 />
             </Link>
             <ul>
-                <li><span>1314 Upper Wentworth St,Hamilton, ON L9A 4W2</span></li>
+                <li><span>Amir Temur 16, Yunusobod region ,Toshkent,Uzbekistan </span></li>
                 <li><label htmlFor="tel">Tel:</label><a href="#!">+998337341399</a></li>
-                <li><label htmlFor="email">Email:</label><a href="#!">+998337341399</a></li>
-                <li><label htmlFor="fax">Fax:</label><a href="#!">+998337341399</a></li>
+                <li><label htmlFor="email">Email:</label><a href="#!">bekzodqurbonov1399@gmail.com</a></li>
+                <li><label htmlFor="fax">Fax:</label><a href="#!">www.productionmachines.fax</a></li>
             </ul>
             </div>
             <div className="col-lg-3 col-md-3 col-sm-3 col-12">
@@ -27,16 +26,16 @@ const Footer = () => {
                           <Link to="/">Home</Link>
                       </li>
                       <li>
-                          <Link to="/">Meet The Team</Link>
+                          <Link to="/service">Service</Link>
                       </li>
                       <li>
-                          <Link to="/">Insurance Billing</Link>
+                          <Link to="/products">Products</Link>
                       </li>
                       <li>
-                          <Link to="/">News</Link>
+                          <Link to="/about">About</Link>
                       </li>
                       <li>
-                          <Link to="/">Book Online</Link>
+                          <Link to="/">Buy Online</Link>
                       </li>
                       <li>
                           <Link to="/">Contact Us</Link>
@@ -49,30 +48,17 @@ const Footer = () => {
                           <Link to="/">Our Services</Link>
                       </li>
                       <li>
-                          <Link to="/">Massage Therapy</Link>
+                          <Link to="/">Agricultury</Link>
                       </li>
                       <li>
-                          <Link to="/">Chiropractic</Link>
+                          <Link to="/">Buildings</Link>
                       </li>
                       <li>
-                          <Link to="/">Naturopathy</Link>
+                          <Link to="/">Greenhouse</Link>
                       </li>
                       <li>
-                          <Link to="/">Physiotherapy</Link>
-                      </li>
-                      <li>
-                          <Link to="/">Acupuncture</Link>
-                      </li>
-                      <li>
-                          <Link to="/">Shockwave Therapy</Link>
-                      </li>
-                      <li>
-                          <Link to="/">Custom Orthotics</Link>
-                      </li>
-                      <li>
-                          <Link to="/">Concussion Management</Link>
-                      </li>
-                      
+                          <Link to="/"></Link>
+                      </li>                      
                   </ul>
             </div>
             

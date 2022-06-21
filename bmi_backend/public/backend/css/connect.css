@@ -664,7 +664,12 @@ h6 {
     -o-transition: background .2s ease-in-out;
     transition: background .2s ease-in-out;
 }
-
+.page-sidebar.hide{
+    transform: translateX(-100%) !important;
+}
+.page-container.hide{
+    margin-left: 0;
+}
 .slimScrollDiv,
 .page-sidebar-inner {
     height: 100%!important;
@@ -4372,11 +4377,19 @@ tr.group {
         transition: all .2s ease-in-out;
     }
 
+    .page-sidebar.show{
+        z-index: 9999;
+        width: 280px;
+        transform: translateX(0%) !important;
+    }
     .page-container {
         width: 100%!important;
         margin: 0!important;
     }
 
+    .page-container.active{
+        margin-left:280px !important ;
+    }
     .small-screens-sidebar-link {
         display: block;
     }
@@ -4488,6 +4501,18 @@ tr.group {
         transform: translateX(0);
     }
 
+    .page-container.active{
+        margin-left:280px !important ;
+    }
+
+    .page-sidebar.show{
+        z-index: 9999;
+        width:280px;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0%) !important;
+    }
+
     .accordion-menu > li > a {
         transition: none!important;
     }
@@ -4551,6 +4576,20 @@ tr.group {
 }
 
 @media (max-width: 767px) {
+    .page-container.active{
+        margin-left:280px !important ;
+        transition: all linear 0.2s;
+    }
+
+    .page-sidebar.show{
+        z-index: 9999;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0%) !important;
+    }
+   
+
     .slimscroll {
         overflow-y: auto;
     }

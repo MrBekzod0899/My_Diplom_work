@@ -1,15 +1,26 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => {
     const [show,setShow]=useState(false)
+    const [categories,setCategories]=useState([])
     console.log(show)
     document.querySelectorAll('.navbar__item').forEach(item=>{
         item.addEventListener('click',()=>{
             setShow(false)
         })
     })
+
+    useEffect(()=>{
+      fetch('http://localhost:5000/api/getcategory')
+      .then(res=>res.json())
+      .then(data=>{
+        setCategories(data)
+      })
+    },[])
+
   return (
     <div className={`container-fluid navbar  ${show ? "showNav" : ''}`}>
       <div className="row ">
@@ -20,7 +31,7 @@ const Navbar = () => {
         }
           <Link to="/" className="navbar__brand">
             <img
-              src='https://i.pinimg.com/originals/bf/94/9d/bf949dba3df5479c96964b86a1ebff63.png'
+              src='https://i.pinimg.com/736x/02/e5/1f/02e51f383db8af5cc049528e3501aa4e.jpg'
               alt="logo"
               width={80}
               height={80}
@@ -31,42 +42,29 @@ const Navbar = () => {
               <Link to='/'>Home</Link>
             </li>
             <li className="navbar__item">
-              <a href="#!">Service </a>
+              <Link to='/news'>News </Link>
             </li>
             <li className="navbar__item">
               <Link to="/product">Our Products</Link>
               <ul className="inneritem">
-                <li>
-                  <a href="#!">Carane</a>
-                </li>
-                <li>
-                  <a href="#!">Tractor</a>
-                </li>
-                <li>
-                  <a href="#!">Drill</a>
-                </li>
-                <li>
-                  <a href="#!">Tools</a>
-                </li> 
-                <li>
-                  <a href="#!">Others</a>
-                </li>
+                {
+                  categories && 
+                  categories.map((item,index)=>(
+                    <li key={item._id}>
+                      <a href="#!">{item.title}</a>
+                    </li>
+                  ))
+                }
               </ul>
             </li>
             <li className="navbar__item">
-              <a href="#!">Offers</a>
+              <Link to='/vacancy'>Vacancy</Link>
             </li>
             <li className="navbar__item">
-              <a href="#!">Buy Online</a>
+              <Link to='/partners'>Partners</Link>
             </li>
             <li className="navbar__item">
-              <a href="#!">Vacancy</a>
-            </li>
-            <li className="navbar__item">
-              <a href="#!">Partners</a>
-            </li>
-            <li className="navbar__item">
-              <a href="#!">About us</a>
+              <Link to='/about'>About us</Link>
             </li>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 const { Router } = require("express");
 
 const router=Router()
+const Faqs=require('../model/faqs')
 
 router.get('/',async(req,res)=>{
     res.render('page/faqs/faqs',{

@@ -2,8 +2,8 @@
   <div class="logo-box"><a href="#" class="logo-text">{{user.login}}</a><a
       href="#"
       id="sidebar-close"
-    ><i class="material-icons">close</i></a>
-    <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i
+    ><i onclick="hideSidebar()" class="material-icons">close</i></a>
+    <a href="#" id="sidebar-state"><i class="material-icons" onclick="hide()">adjust</i><i
         class="material-icons compact-sidebar-icon"
       >panorama_fish_eye</i></a></div>
   <div class="page-sidebar-inner slimscroll">
@@ -16,11 +16,6 @@
             class="material-icons-outlined"
           >dashboard</i>Bosh sahifa</a>
       </li>
-      <li {{#if isCompany_Info}} class="active-page" {{/if}} >
-        <a href="/company_info" {{#if isCompany_Info}} class="active" {{/if}} ><i
-            class="material-icons-outlined"
-          >slideshow</i>Company Info</a>
-      </li>
       <li {{#if isStuff}} class="active-page" {{/if}} >
         <a href="/stuff" {{#if isStuff}} class="active" {{/if}} ><i
             class="material-icons-outlined"
@@ -30,11 +25,6 @@
         <a href="/product" {{#if isProduct}} class="active" {{/if}} ><i
             class="material-icons-outlined"
           >grid_view</i>Product</a>
-      </li>
-      <li {{#if isTechnology}}   class="active-page" {{/if}} >
-        <a href="/technology" {{#if isTechnology}} class="active" {{/if}} ><i
-            class="material-icons-outlined"
-          >grid_view</i>Technology</a>
       </li>
       <li {{#if isCategory}}   class="active-page" {{/if}} >
         <a href="/category" {{#if isCategory}} class="active" {{/if}} ><i
@@ -46,13 +36,8 @@
             class="material-icons-outlined"
           >grid_view</i>Attribute</a>
       </li>
-      <li {{#if isSlider}}   class="active-page" {{/if}} >
-        <a href="/slider" {{#if isSlider}} class="active" {{/if}} ><i
-            class="material-icons-outlined"
-          >grid_view</i>slider</a>
-      </li>
-      <li {{#if isVakansiya}} class="active-page" {{/if}}>
-        <a href="/vakansiya" {{#if isVakansiya}} class="active" {{/if}}>
+      <li {{#if isVacancy}} class="active-page" {{/if}}>
+        <a href="/vacancy" {{#if isVacancy}} class="active" {{/if}}>
         <i class="material-icons-outlined">shopping_basket</i>vakansiya</a>
       </li>
       <li {{#if isFaqs}} class="active-page" {{/if}}>
@@ -61,3 +46,19 @@
     </ul>
   </div>
 </div>
+
+<script>
+    if(window.outerWidth>1200){
+        function hide(){
+          document.querySelector('.page-sidebar').classList.add('hide')
+          document.querySelector('.page-container ').classList.add('hide')
+          document.querySelector('.small-screens-sidebar-link').style.display='block'
+        }
+    }
+    
+    function hideSidebar(){
+      document.querySelector('.page-sidebar').classList.remove('show')
+      document.querySelector('.page-container').classList.remove('active')
+      document.querySelector('.small-screens-sidebar-link').style.display='block'
+    }
+</script>

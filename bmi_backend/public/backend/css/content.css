@@ -26,3 +26,39 @@
     background: url('../images/500.svg') center center no-repeat !important;
     background-size: 100% 70%;
 }
+.stuffs tr td:last-child{
+    white-space: nowrap;
+}
+.statistika{
+    background-color: #f4f4f4;
+    margin: 20px 10px;
+    padding: 20px 10px;
+    justify-content: center;
+}
+.statistika .col-lg-3 .status-info{
+    background-color: white;
+    padding: 10px;
+    height: 260px;
+}
+
+.statistika .col-lg-3 .status-info .content{
+    height: 60% !important;
+    align-items: center;
+    display: flex;
+    justify-content: center !important;
+    width: 100%;
+}
+.statistika .col-lg-3 {
+    margin-bottom: 10px;
+}
+.statistika .col-lg-3 .status-info .card-content h4{
+    font-size: 24px;
+    font-weight: 700;
+    overflow: hidden;
+}
+.statistika .col-lg-3 .status-info .card-content h4:first-child{
+    color: rgba(0, 0, 255, 0.856);
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 10px;
+}

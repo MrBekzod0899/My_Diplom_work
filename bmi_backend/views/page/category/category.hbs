@@ -128,7 +128,7 @@
     console.log(image)
     function edit(id){
         console.log(id)
-        fetch(`http://localhost:3003/category/get/${id}`)
+        fetch(`http://localhost:5000/category/get/${id}`)
         .then(res=>res.json())
         .then(data=>{
             editform._id.value=data._id
@@ -141,3 +141,23 @@
         })
     }       
 </script>
+
+{{!-- <script>
+    let editform=document.forms.editForm
+    let image=document.getElementById('image')
+    console.log(image)
+    function edit(id){
+        console.log(id)
+        fetch(`http://localhost:5000/category/get/${id}`)
+        .then(res=>res.json())
+        .then(data=>{
+            editform._id.value=data._id
+            editform.title.value=data.title
+            editform.order.value=data.order
+            editform.status.checked=data.status==1 ? true : false
+            if(data.Image){
+                image.setAttribute('src',`/${data.Image}`)
+            }
+        })
+    }       
+</script> --}}

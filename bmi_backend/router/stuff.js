@@ -4,28 +4,44 @@ const Stuff=require('../model/stuff')
 const upload=require('../middleware/file')
 
 router.get('/',async(req,res)=>{
-    let stufs=await Stuff.find().lean()
-    stufs=stufs.map(stuff=>{
-        stuff.status===1 ?
+    let stuffs=await Stuff.find().lean()
+    stuffs=stuffs.map(stuff=>{
+        stuff.status ?
         stuff.status=`<span class="badge badge-pill badge-success">faol</span>`
         : stuff.status=`<span class="badge badge-pill badge-danger">no faol</span>`
+        
     return stuff
     })
+
     res.render('page/stuff/stuff',{
         isStuff:true,
         title:'Stuff',
-        stufs
+        stuffs
     })
 })
 
-router.post('/',upload.single('Image'),async(req,res)=>{
-    let {title,order,status}=req.body
-    status=status || 0
-    let Image='no photo'
-    if(req.file){
-        Image=req.file.path
+router.post('/',upload.fields([
+    {
+        name:'avatar',maxCount:1
+    },
+    {
+        name:'resume',maxCount:1
     }
-    let newStuff=await new Stuff({title,order,status,Image})
+]),async(req,res)=>{
+    let {name,phone,gmail,age,occupation,status}=req.body
+    console.log(req.body)
+    status=status || 0
+    let {avatar,resume}=req.files
+    let image=''
+    let cv=''
+    if(avatar){
+        image=avatar[0].path
+    } 
+    if(resume){
+        cv=resume[0].path
+    }
+    console.log(req.files)
+    let newStuff=await new Stuff({name,phone,gmail,age,occupation,status,resume:cv,avatar:image})
     await newStuff.save()
     res.redirect('/stuff')
 })

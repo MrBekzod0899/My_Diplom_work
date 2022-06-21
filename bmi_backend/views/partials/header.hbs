@@ -13,7 +13,8 @@
     </button>
     <ul class="navbar-nav">
       <li class="nav-item small-screens-sidebar-link">
-        <a href="#" class="nav-link"><i
+        <a href="#" class="nav-link"><i 
+            onclick="showS()"
             class="material-icons-outlined"
           >menu</i></a>
       </li>
@@ -41,10 +42,10 @@
           <a class="dropdown-item" href="#">Calendar<span
               class="badge badge-pill badge-info float-right"
             >2</span></a>
-          <a class="dropdown-item" href="#">Settings and Privacy</a>
+          <a class="dropdown-item" href="#">Settings</a>
           <a class="dropdown-item" href="#">Switch Account</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/logout" onclick="confirm('Rostdan ham chiqishni hohlaysizmi ?')">Log out</a>
+          <a class="dropdown-item" href="/login" onclick="confirm('Rostdan ham chiqishni hohlaysizmi ?')">Log out</a>
         </div>
       </li>
     </ul>
@@ -52,3 +53,20 @@
     </div>
   </nav>
 </div>
+
+<script>
+  if(window.outerWidth>1200){
+      function showS(){
+          document.querySelector('.page-sidebar').classList.remove('hide')
+          document.querySelector('.page-container ').classList.remove('hide')
+          document.querySelector('.small-screens-sidebar-link').style.display='none'
+        }
+  }
+  else{
+    function showS(){
+      document.querySelector('.page-sidebar').classList.add('show')
+      document.querySelector('.page-container').classList.add('active')
+      document.querySelector('.small-screens-sidebar-link').style.display='none'
+    }
+  }
+</script>

@@ -25,11 +25,13 @@ app.use(cors())
 app.use(flash())
 
 
-const mongoURL='mongodb://127.0.0.1:27017/math-compiler'
+const mongoURL='mongodb://127.0.0.1:27017/company-production'
 const store=MongoStore({
   collection:'session',
   uri:mongoURL
 })
+
+
 
 
 app.use(session({

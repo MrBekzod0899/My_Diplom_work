@@ -142,7 +142,7 @@
     console.log(image)
     function edit(id){
         console.log(id)
-        fetch(`http://localhost:3003/attribute/get/${id}`)
+        fetch(`http://localhost:5000/attribute/get/${id}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

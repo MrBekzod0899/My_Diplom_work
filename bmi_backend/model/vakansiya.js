@@ -1,8 +1,10 @@
 const {Schema,model}=require('mongoose')
 
-const vakansiya=new Schema({
+const vacancy=new Schema({
     title:String,
-    quantity:Number,
+    location:String,
+    count:Number,
+    type:String,
     price:String,
     receiver_cv:String,
     description:String,
@@ -12,4 +14,4 @@ const vakansiya=new Schema({
     }
 })
 
-module.exports=model('Vakansiya',vakansiya)
+module.exports=model('Vacancy',vacancy)

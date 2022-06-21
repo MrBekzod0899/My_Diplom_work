@@ -52,73 +52,6 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="container home-product">
-        <h1>Our Products</h1>
-        <div className="row ">
-          <div className="col-lg-4  col-md-6 col-sm-6 col-12">
-            <div className="card">
-              <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div className="card">
-            <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
-               
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div className="card">
-            <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />
-               
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div className="card">
-              <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />         
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div className="card">
-            <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />           
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div className="card">
-            <div className="card-body">
-                <img className="img-fluid" src="https://www.liebherr.com/shared/media/mobile-and-crawler-cranes/images/subhome/liebherr-category-teaser-ltm_rechteck_2zu1.jpg" alt="" />      
-              </div>
-              <div className="card-footer">
-                  <a href="#!">text</a>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="ourService container">
         <div className="row">
           <div className="serviceInfo">
@@ -127,7 +60,7 @@ const Content = () => {
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
             <div className="card">
               <div className="card-content">
-                <img src={require("../../Assets/icon1.png")} alt="icon1" />
+                <img src={require("../../assets/icon1.png")} alt="icon1" />
               </div>
               <h4>Deliver</h4>
               <p>
@@ -141,7 +74,7 @@ const Content = () => {
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
             <div className="card">
               <div className="card-content">
-                <img src={require("../../Assets/icon2.png")} alt="icon2" />
+                <img src={require("../../assets/icon2.png")} alt="icon2" />
               </div>
               <div className="card-info">
                 <h4>Cheap and comfortable service</h4>
@@ -157,7 +90,7 @@ const Content = () => {
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
             <div className="card">
               <div className="card-content">
-                <img src={require("../../Assets/icon3.png")} alt="icon3" />
+                <img src={require("../../assets/icon3.png")} alt="icon3" />
               </div>
               <div className="card-info">
                 <h4>High Quality Equipment</h4>
@@ -173,7 +106,7 @@ const Content = () => {
           <div className="col-lg-3 col-md-3 col-sm-6 col-12">
             <div className="card">
               <div className="card-content">
-                <img src={require("../../Assets/icon4.png")} alt="icon4" />
+                <img src={require("../../assets/icon4.png")} alt="icon4" />
               </div>
               <div className="card-info">
                 <h4>Master</h4>

@@ -12,26 +12,28 @@
                     <thead>
                         <tr>
                             <th class="text-center" scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">subject</th>
-                            <th scope="col">status</th>
+                            <th scope="col">Job title</th>
+                            <th scope="col">count</th>
+                            <th scope="col">price</th>
+                            <th scope="col">location</th>
+                            <th scope="col">type</th>
                             <th class="text-center" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each categories}}
+                        {{#each Vacancies}}
                         <tr >
                             <th class="text-center" scope="row">{{@index}}</th>
                             <td>
                                 <span>{{title}}</span>
                             </td>
-                            <td>{{subject.name}}</td>
-                            <td style="cursor: pointer;">
-                                <a href="/category/status/{{_id}}" >{{{status}}}</a>
-                            </td>                            
+                            <td>{{count}}</td>   
+                            <td>{{price}}</td>   
+                            <td>{{location}}</td>                            
+                            <td>{{type}}</td>                           
                             <td>
-                                <a class="btn btn-warning" href="/category/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="/category/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
+                                <a class="btn btn-warning" href="/vacancy/get/{{_id}}" data-toggle="modal" data-target="#editModal" onclick="edit('{{_id}}')" ><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" href="/vacancy/delete/{{_id}}" onclick="return confirm('Qaroringiz aniqmi??')"><i class="fas fa-times"></i></a>
                             </td>
                         </tr>
                         {{/each}}
@@ -42,7 +44,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade vacancy-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -53,25 +55,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/category?_csrf={{csrf}}"  method="post">
-                <input type="hidden" name="_csrf" value="{{csrf}}" />
+                <form action="/vacancy"  method="post">
                     <div class="form-group">
                         <input type="text" name="title" class="form-control" 
-                            placeholder="Enter Category title" />
+                            placeholder="Enter Job title" />
                     </div>
                      <div class="form-group">
-                        <label for="inputState">Subject</label>
-                        <select name="subject" id="inputState" class="form-control custom-select">
-                                <option class="p-2 m-2" selected disabled>Choose Subject...</option>
-                            {{#each subjects}}
-                                <option value="{{_id}}" class="p-2 m-2" >{{name}}</option>
-                            {{/each}}
-                        </select>
+                        <input type="number" name="count" class="form-control" 
+                            placeholder="Enter Worker count" />
+                    </div> 
+                     <div class="form-group">
+                        <input type="text" name="price" class="form-control" 
+                            placeholder="Enter Job price" />
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" name="location" class="form-control" 
+                            placeholder="Enter Job Location" />
                     </div>
-                    <div class="custom-control custom-checkbox form-group">
-                        <input type="checkbox" class="custom-control-input" id="Status" value="1" name="status"
-                            checked />
-                        <label class="custom-control-label" for="Status">status</label>
+                    <div class="form-group">
+                        <textarea type="text" id="description" name="description" class="form-control" 
+                            placeholder="Enter Job description"></textarea>
                     </div>
                     <div class="modal-footer pr-0">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bekor qilish</button>
@@ -95,28 +98,33 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/category/save?_csrf={{csrf}}" name="editForm"  method="post">
+                <form action="/vacancy" name="editForm"  method="post">
                     <div class="form-group">
                         <input type="hidden"  name="_id" value="" />
-                        <input type="hidden"  name="_csrf" value="{{csrf}}" />
                         <input type="text" name="title" class="form-control"
-                            placeholder="Enter Category title" />
-                    </div>
+                            placeholder="Enter Job title" />
+                    </div>   
                     <div class="form-group">
-                        <label for="inputState">Subject</label>
-                        <select name="subject" id="inputState" class="form-control custom-select">
-                                <option class="p-2 m-2" selected disabled>Choose Subject...</option>
-                            {{#each subjects}}
-                                <option value="{{_id}}" class="p-2 m-2" >{{name}}</option>
-                            {{/each}}
-                        </select>
+                        <input type="number" name="count" class="form-control"
+                            placeholder="Enter Worker Count" />
                     </div>
-    
-                    <div class="custom-control custom-checkbox form-group">
-                        <input type="checkbox" class="custom-control-input" id="stCat" value="1" name="status"
-                            checked />
-                        <label class="custom-control-label" for="stCat">status</label>
-                    </div>
+                     <div class="form-group">
+                        <input type="text" name="price" class="form-control"
+                            placeholder="Enter Job Price" />
+                    </div>           
+                    <div class="form-group">
+                        <input type="text" name="location" class="form-control"
+                            placeholder="Enter Job Location" />
+                    </div>               
+                   <div class="form-group">
+                        <input type="text" name="type" class="form-control"
+                            placeholder="Enter Job Degree" />
+                    </div>    
+                    <div class="form-group">
+                        <textarea type="text" id="description2" name="description" class="form-control"
+                            placeholder="Enter Job Description"></textarea>
+                    </div>   
+            
                     <div class="modal-footer pr-0">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bekor qilish</button>
                         <button type="submit" class="btn btn-primary">Saqlash</button>
@@ -127,19 +135,26 @@
     </div>
 </div>
 
+<script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 <script>
+   CKEDITOR.replace('description')
+   
     let editform=document.forms.editForm
-    let image=document.getElementById('image')
-    console.log(image)
     function edit(id){
         console.log(id)
-        fetch(`http://localhost:8080/category/get/${id}`)
+        fetch(`http://localhost:5000/vacancy/get/${id}`)
         .then(res=>res.json())
         .then(data=>{
+            console.log(data)
             editform._id.value=data._id
             editform.title.value=data.title
-            editform.subject.value=data.subject
-            editform.status.checked=data.status ? true : false
+            editform.count.value=data.count
+            editform.location.value=data.location
+            editform.type.value=data.type
+            editform.price.value=data.price
+            editform.description.value=data.description 
+            CKEDITOR.replace('description2')
         })
-    }       
+    }   
+      
 </script>
